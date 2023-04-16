@@ -2,7 +2,9 @@ let anniOK = false
 let distanzaOK = false
 
 
-let anni = prompt("Quanti anni hai?")
+
+
+let anni = Number(prompt("Quanti anni hai?"))
 
 if (anni == null || anni == "") {
     alert("Non hai inserito l'età");
@@ -37,20 +39,23 @@ if (anniOK && distanzaOK) {
         console.log("L'utente maggiorenne non avrà uno sconto");
     }
 
-    document.getElementById("prezzo").innerText = prezzo;
+    document.getElementById("prezzo").innerText = prezzo.toFixed(2);
+
 
     console.log("Il nuovo prezzo è:", prezzo);
 
-    if (anni > 65) {
+
+    if (anni >= 65) {
         console.log("L'utente è over 65 verrà applicato lo sconto");
         prezzo *= 0.4;
     } else {
         console.log("L'utente non over 65 non avrà uno sconto");
     }
 
-    document.getElementById("prezzo").innerText = prezzo;
+    document.getElementById("prezzo").innerText = prezzo.toFixed(2);
 
     console.log("Il nuovo prezzo è:", prezzo);
+
 
 } else {
 
