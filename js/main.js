@@ -1,6 +1,7 @@
 let anniOK = false
 let distanzaOK = false
 
+
 let anni = prompt("Quanti anni hai?")
 
 if (anni == null || anni == "") {
@@ -9,6 +10,8 @@ if (anni == null || anni == "") {
     console.log("L'utente ha inserito un'età valida");
     anniOK = true; 
 }
+
+
 
 let distanza = prompt("Quanti kilomenti devi percorrere?")
 
@@ -19,9 +22,31 @@ if (distanza == null || distanza == "") {
     distanzaOK = true; 
 }
 
+
+
 if (anniOK && distanzaOK) {
 
     let prezzo = distanza * 0.21;
+
+    console.log("Prezzo", prezzo)
+
+    if (anni < 18) {
+        console.log("L'utente è minorenne verrà applicato lo sconto");
+        prezzo *= 0.8;
+    } else {
+        console.log("L'utente maggiorenne non avrà uno sconto");
+    }
+
+    document.getElementById("prezzo").innerText = prezzo;
+
+    console.log("Il nuovo prezzo è:", prezzo);
+
+    if (anni > 65) {
+        console.log("L'utente è over 65 verrà applicato lo sconto");
+        prezzo *= 0.4;
+    } else {
+        console.log("L'utente non over 65 non avrà uno sconto");
+    }
 
     document.getElementById("prezzo").innerText = prezzo;
 
